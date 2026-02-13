@@ -1,0 +1,126 @@
+[32m2026-02-13 16:55:03 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - 31742 - LOGS_CAPTURED - Started capturing logs in process (pid: 31742).
+[32m2026-02-13 16:55:03 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - 31742 - run_bronze_bronze_hr_employees - STEP_START - Started execution of step "run_bronze_bronze_hr_employees".
+2026-02-13 16:55:03,398 - core.storage - INFO - Writing DataFrame to bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet using adls backend
+2026-02-13 16:55:03,399 - core.storage - INFO - Writing DataFrame (3 rows, 5 columns) to ADLS: abfss://dairy-data-platform-data@woningmarktintelx9.dfs.core.windows.net/dairy-company-data-platform/data/bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet
+2026-02-13 16:55:03,528 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.blob.core.windows.net/dairy-data-platform-data?restype=REDACTED'
+Request method: 'GET'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5c1788a0-08f4-11f1-afa5-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-13 16:55:03,672 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Content-Length': '0'
+    'Last-Modified': 'Fri, 13 Feb 2026 14:49:37 GMT'
+    'ETag': '"0x8DE6B0F1C0E1ABE"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': 'f3ac8c77-101e-0023-5601-9da0f2000000'
+    'x-ms-client-request-id': '5c1788a0-08f4-11f1-afa5-765227f64d11'
+    'x-ms-version': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-has-immutability-policy': 'REDACTED'
+    'x-ms-has-legal-hold': 'REDACTED'
+    'x-ms-immutable-storage-with-versioning-enabled': 'REDACTED'
+    'x-ms-default-encryption-scope': 'REDACTED'
+    'x-ms-deny-encryption-scope-override': 'REDACTED'
+    'Date': 'Fri, 13 Feb 2026 15:55:03 GMT'
+2026-02-13 16:55:03,673 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dairy-data-platform-data/dairy-company-data-platform/data/bronze?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5c2da39c-08f4-11f1-afa5-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-13 16:55:03,848 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'ETag': '"0x8DE6B18407A08D0"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '4be7878c-f01f-0059-4f01-9dbdb2000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '5c2da39c-08f4-11f1-afa5-765227f64d11'
+    'Date': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'Content-Length': '0'
+2026-02-13 16:55:03,849 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dairy-data-platform-data/dairy-company-data-platform/data/bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet?resource=REDACTED'
+Request method: 'PUT'
+Request headers:
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5c4888ba-08f4-11f1-afa5-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-13 16:55:03,888 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 201
+Response headers:
+    'Last-Modified': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'ETag': '"0x8DE6B184080F844"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '4be78794-f01f-0059-5701-9dbdb2000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '5c4888ba-08f4-11f1-afa5-765227f64d11'
+    'Date': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'Content-Length': '0'
+2026-02-13 16:55:03,889 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dairy-data-platform-data/dairy-company-data-platform/data/bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet?action=REDACTED&position=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'Content-Length': '2083'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/json'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5c4e9a20-08f4-11f1-afa5-765227f64d11'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+2026-02-13 16:55:03,932 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 202
+Response headers:
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '4be7879c-f01f-0059-5f01-9dbdb2000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '5c4e9a20-08f4-11f1-afa5-765227f64d11'
+    'Date': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'Content-Length': '0'
+2026-02-13 16:55:03,934 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://woningmarktintelx9.dfs.core.windows.net/dairy-data-platform-data/dairy-company-data-platform/data/bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet?action=REDACTED&position=REDACTED&close=REDACTED'
+Request method: 'PATCH'
+Request headers:
+    'If-Match': '"0x8DE6B184080F844"'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/json'
+    'User-Agent': 'azsdk-python-storage-dfs/12.23.0 Python/3.14.2 (macOS-15.6.1-arm64-arm-64bit-Mach-O)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '5c557cfa-08f4-11f1-afa5-765227f64d11'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2026-02-13 16:55:03,987 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 200
+Response headers:
+    'Last-Modified': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'ETag': '"0x8DE6B184090253C"'
+    'Server': 'Windows-Azure-HDFS/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'x-ms-request-id': '4be787a2-f01f-0059-6501-9dbdb2000000'
+    'x-ms-version': 'REDACTED'
+    'x-ms-client-request-id': '5c557cfa-08f4-11f1-afa5-765227f64d11'
+    'Date': 'Fri, 13 Feb 2026 15:55:03 GMT'
+    'Content-Length': '0'
+2026-02-13 16:55:03,988 - core.storage - INFO - Successfully uploaded 0 bytes to ADLS: abfss://dairy-data-platform-data@woningmarktintelx9.dfs.core.windows.net/dairy-company-data-platform/data/bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet
+2026-02-13 16:55:03,995 - core.storage - INFO - ADLS write successful: abfss://dairy-data-platform-data@woningmarktintelx9.dfs.core.windows.net/dairy-company-data-platform/data/bronze/bronze_bronze_hr_employees_20260213T155503Z.parquet
+2026-02-13 16:55:03,999 - core.storage - INFO - Successfully wrote 3 rows to local storage: /Users/taniskarigar/test-polster/dairy-company-data-platform/data/bronze/sample_bronze_bronze_hr_employees_20260213T155503Z.parquet
+[32m2026-02-13 16:55:04 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - 31742 - run_bronze_bronze_hr_employees - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2026-02-13 16:55:04 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - run_bronze_bronze_hr_employees - Writing file at: /Users/taniskarigar/test-polster/dairy-company-data-platform/.dagster/storage/run_bronze_bronze_hr_employees using PickledObjectFilesystemIOManager...
+2026-02-13 16:55:04,017 - alembic.runtime.migration - INFO - Context impl SQLiteImpl.
+2026-02-13 16:55:04,017 - alembic.runtime.migration - INFO - Will assume non-transactional DDL.
+[32m2026-02-13 16:55:04 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - 31742 - run_bronze_bronze_hr_employees - ASSET_MATERIALIZATION - Materialized value run_bronze_bronze_hr_employees.
+[32m2026-02-13 16:55:04 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - 31742 - run_bronze_bronze_hr_employees - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2026-02-13 16:55:04 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b570b4b2-316b-45b3-9177-b46d5c2313cd - 31742 - run_bronze_bronze_hr_employees - STEP_SUCCESS - Finished execution of step "run_bronze_bronze_hr_employees" in 644ms.

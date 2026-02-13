@@ -17,6 +17,11 @@ import pathlib
 import subprocess
 import sys
 
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 def find_project_root(start: pathlib.Path) -> pathlib.Path:
     """Walk up directories until a pyproject.toml is found."""
