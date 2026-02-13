@@ -1,0 +1,57 @@
+[32m2026-02-13 16:21:39 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 2a4b65f4-3011-43c0-a0ac-c8c08511468f - 28553 - LOGS_CAPTURED - Started capturing logs in process (pid: 28553).
+[32m2026-02-13 16:21:39 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 2a4b65f4-3011-43c0-a0ac-c8c08511468f - 28553 - run_bronze_example - STEP_START - Started execution of step "run_bronze_example".
+2026-02-13 16:21:39,686 - src.core.utils - INFO - Starting operation: bronze layer data extraction
+2026-02-13 16:21:39,686 - src.core.bronze_example - INFO - Starting bronze layer data extraction
+2026-02-13 16:21:39,686 - src.core.bronze_example - INFO - Generating 50 sample orders for adls storage
+2026-02-13 16:21:39,690 - src.core.utils - INFO - Generated bronze data: 50 rows, 6 columns
+2026-02-13 16:21:39,690 - src.core.storage - INFO - Writing DataFrame to bronze/bronze_orders_20260213T152139Z.parquet using adls backend
+2026-02-13 16:21:39,690 - src.core.storage - INFO - Writing DataFrame (50 rows, 6 columns) to ADLS: abfss://dairy-data-platform-data@woningmarktintelx9.dfs.core.windows.net/dairy-company-data-platform/data/bronze/bronze_orders_20260213T152139Z.parquet
+2026-02-13 16:21:39,691 - src.core.storage - ERROR - ADLS write failed and fallback is disabled: azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake
+2026-02-13 16:21:39,691 - src.core.bronze_example - ERROR - Bronze layer extraction failed: ADLS write failed (fallback disabled): azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake
+2026-02-13 16:21:39,691 - src.core.utils - ERROR - Operation 'bronze layer data extraction' failed after 0.01 seconds: Data extraction failed: ADLS write failed (fallback disabled): azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake
+[32m2026-02-13 16:21:39 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 2a4b65f4-3011-43c0-a0ac-c8c08511468f - 28553 - run_bronze_example - STEP_FAILURE - Execution of step "run_bronze_example" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_bronze_example"::
+
+RuntimeError: Data extraction failed: ADLS write failed (fallback disabled): azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake
+
+Stack Trace:
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/.venv/lib/python3.14/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+        fn, context, kwargs, context_arg_provided, config_arg_class, resource_arg_mapping
+    )
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/.venv/lib/python3.14/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+                                                                    ~~^^^^^^^^^^^^^^^^
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/src/orchestration/assets/bronze/run_bronze_example.py", line 16, in run_bronze_example
+    bronze_path, df, metadata = extract()
+                                ~~~~~~~^^
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/src/core/bronze_example.py", line 152, in extract
+    raise RuntimeError(f"Data extraction failed: {e}") from e
+
+The above exception was caused by the following exception:
+RuntimeError: ADLS write failed (fallback disabled): azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake
+
+Stack Trace:
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/src/core/bronze_example.py", line 130, in extract
+    output_path = write_parquet(
+        df, "bronze", f"bronze_orders_{timestamp}.parquet"
+    )
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/src/core/storage.py", line 211, in write_parquet
+    raise RuntimeError(f"ADLS write failed (fallback disabled): {e}") from e
+
+The above exception was caused by the following exception:
+ModuleNotFoundError: azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake
+
+Stack Trace:
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/src/core/storage.py", line 203, in write_parquet
+    adls_path = write_azure_data_lake(df, layer, filename)
+  File "/Users/taniskarigar/test-polster/dairy-company-data-platform/src/core/storage.py", line 130, in write_azure_data_lake
+    raise ModuleNotFoundError(
+        "azure-storage-filedatalake not installed. Install with: pip install azure-storage-filedatalake"
+    ) from None
+[0m
