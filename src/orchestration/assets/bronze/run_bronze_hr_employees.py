@@ -12,7 +12,7 @@ from orchestration.utils import create_output_with_metadata
 @asset(
     group_name="bronze",
     description="Bronze asset for hr_employees",
-    compute_kind="polars",
+    compute_kind="polars",   
 )
 def run_bronze_hr_employees():
     """Run bronze extraction for hr_employees."""
